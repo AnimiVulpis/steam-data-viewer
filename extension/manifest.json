@@ -1,0 +1,21 @@
+{
+	"name": "SteamData",
+	"description": "scraping and visualizing various steam data",
+	"version": "0.1",
+	"manifest_version": 2,
+	"icons": {
+		"128": "logo-128.png"
+	},
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"page_action": {
+		"default_icon": {
+			"19": "logo-19.png"
+		}
+	},
+	"permissions": [
+		"declarativeContent"
+	]
+}
