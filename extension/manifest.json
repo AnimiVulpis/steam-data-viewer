@@ -4,18 +4,21 @@
 	"version": "0.1",
 	"manifest_version": 2,
 	"icons": {
-		"128": "logo-128.png"
+		"128": "/img/logo-128.png"
 	},
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false
 	},
 	"page_action": {
+		"default_title": "extension to collect and show steam data",
 		"default_icon": {
-			"19": "logo-19.png"
-		}
+			"19": "/img/logo-19.png"
+		},
+		"default_popup": "/popup/popup.html"
 	},
 	"permissions": [
-		"declarativeContent"
+		"declarativeContent",
+		"http://steamcommunity.com/"
 	]
 }
