@@ -16,7 +16,7 @@ var displayRules = {
 };
 
 function collectOwnGames() {
-	var gameList = [];
+	var gameList;
 	function communityPageLoaded(response) {
 		var userPageUrl = response.target.response.querySelector(".menuitem.supernav.username").getAttribute("href").slice(0, -5);
 		var xhr = new XMLHttpRequest();
@@ -26,12 +26,11 @@ function collectOwnGames() {
 		xhr.send();
 	}
 	function gamePageLoaded(response) {
-		var gameListScript = response.target.response.querySelector("script[language]").textContent;
-//		better performance than indexOf possible?
-		var startIndex = gameListScript.indexOf("[");
-		var endIndex = gameListScript.indexOf("];\n");
-		var gamesAsJson = JSON.parse(gameListScript.slice(startIndex, endIndex + 1));
-		debugger;
+//		splitting the lines first seems (further tests needed) to give better performance
+		var gameListLine = response.target.response.querySelector("script[language]").textContent.split("\n")[1];
+		var startIndex = gameListLine.indexOf("[");
+		var endIndex = gameListLine.indexOf("];");
+		var gameList = JSON.parse(gameListLine.slice(startIndex, endIndex + 1));
 	}
 	var xhr = new XMLHttpRequest();
 	xhr.onload = communityPageLoaded;
