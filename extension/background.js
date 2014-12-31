@@ -16,7 +16,6 @@ var displayRules = {
 };
 
 function collectOwnGames() {
-	var gameList;
 	function communityPageLoaded(response) {
 		var userPageUrl = response.target.response.querySelector(".menuitem.supernav.username").getAttribute("href").slice(0, -5);
 		var xhr = new XMLHttpRequest();
@@ -31,6 +30,10 @@ function collectOwnGames() {
 		var startIndex = gameListLine.indexOf("[");
 		var endIndex = gameListLine.indexOf("];");
 		var gameList = JSON.parse(gameListLine.slice(startIndex, endIndex + 1));
+		var gameObject = gameList.reduce(function toObj(previousVal, currentVal, index, list) {
+			previousVal[list[index].appid] = currentVal;
+			return previousVal;
+		}, {});
 	}
 	var xhr = new XMLHttpRequest();
 	xhr.onload = communityPageLoaded;
