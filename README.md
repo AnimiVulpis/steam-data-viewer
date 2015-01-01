@@ -1,8 +1,12 @@
-code for an extension which gets steam data
+# steam data viewer
+Code for an extension which will/should get lots of steam data
+about your games and games of your friends.
+Shall display these with filtering tools and local
+caching and more...
 ____
-possible technologies to try out:
+currently work in progress
 
-- Dashboards (https://github.com/keen/dashboards)
-- d3.js or c3.js for visualisation
- - (https://github.com/mbostock/d3)
- - (https://github.com/masayuki0812/c3)
+## License
+- The Font Awesome font which I used to create the logos is licensed under the SIL OFL 1.1:
+  - http://scripts.sil.org/OFL
+- d3.js is licensed under the license in the corresponding [file](extension/viewdata/d3/LICENSE)
