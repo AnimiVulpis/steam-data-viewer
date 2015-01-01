@@ -14,8 +14,7 @@
 		"default_title": "extension to collect and show steam data",
 		"default_icon": {
 			"19": "/img/logo-19.png"
-		},
-		"default_popup": "/popup/popup.html"
+		}
 	},
 	"permissions": [
 		"declarativeContent",

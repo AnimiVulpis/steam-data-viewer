@@ -47,3 +47,10 @@ chrome.runtime.onInstalled.addListener(function onUpdate() {
 		chrome.declarativeContent.onPageChanged.addRules([displayRules]);
 	});
 });
+
+chrome.pageAction.onClicked.addListener(function iconClicked(tab) {
+	chrome.tabs.create({
+		url: "viewdata/viewdata.html",
+		index: tab.index + 1
+	});
+});
