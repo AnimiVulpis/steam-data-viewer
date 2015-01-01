@@ -1,5 +1,4 @@
 "use strict";
-
 var viewdata = function viewdata() {
 	var exports = {};
 	var gameList;
@@ -28,10 +27,10 @@ var viewdata = function viewdata() {
 	return exports;
 }();
 
+//information about how to construct various steam links
 //gameInfo['link'] = ( "http://steamcommunity.com/app/" + gameInfo['appid'] );
 //href="#{profile_link}/stats/#{friendlyURL}/?tab=achievements"
 //href="#{profile_link}/stats/#{friendlyURL}/?tab=stats"
 //href="#{profile_link}/stats/#{friendlyURL}/?tab=leaderboards"
 //href="http://steamcommunity.com/stats/#{friendlyURL}/achievements/"
 //href="http://steamcommunity.com/stats/#{friendlyURL}/leaderboards/"
-//d3.select("#dataviz").selectAll("div").data(gameList).enter().append("div").append("p").text(function(a,b,c,d,e,f){debugger; return a.name});
